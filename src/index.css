@@ -1,13 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background-color: #22254b;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+header {
+  background-color: #373b69;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search {
+  background-color: transparent;
+  border: 2px solid #22254b;
+  border-radius: 50px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+.search::placeholder {
+  color: #7378c5;
+}
+.search:focus {
+  background-color: #22254b;
+  outline: none;
+}
+
+.movie {
+  background-color: #373b69;
+  width: 300px;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.movie img {
+  max-width: 100%;
+}
+
+.movie-info {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movie-info h3 {
+  margin: 0;
+}
+
+.overview {
+  background-color: white;
+  color: #22254b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  max-height: 100%;
+  padding: 1rem;
+  transform: translateY(102%);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.movie:hover .overview {
+  transform: translateY(0%);
+}
+
+.tag.red {
+  color: red;
+}
+
+.tag.orange {
+  color: orange;
+}
+.tag.green {
+  color: green;
+}
+
+.tag {
+  background-color: #22254b;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: bold;
 }
